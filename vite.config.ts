@@ -24,12 +24,17 @@ export default defineConfig({
   plugins: [
     react(),
     dts({
-      entryRoot: resolve(__dirname, "./src"),
+      entryRoot: resolve(__dirname, "./lib"),
     }),
   ],
+  resolve: {
+    alias: {
+      "rxjs-use-hooks": resolve(__dirname, "./lib"),
+    },
+  },
   build: {
     lib: {
-      entry: resolve(__dirname, "src/index.ts"),
+      entry: resolve(__dirname, "lib/index.ts"),
       name: "RxJSUseHooks",
       fileName: (format, entryName) => getFileName("rxjs-use-hooks", format),
     },

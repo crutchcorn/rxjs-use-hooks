@@ -12,7 +12,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "rxjs-use-hooks": resolve(__dirname, "./src"),
+      "rxjs-use-hooks": resolve(__dirname, "./lib"),
     },
   },
 });

@@ -17,7 +17,7 @@
     "jsxImportSource": "react",
     "jsx": "preserve"
   },
-  "include": ["src"],
+  "include": ["lib"],
   "exclude": ["*.spec.tsx", "*.spec.ts"],
   "references": [{ "path": "./tsconfig.node.json" }, { "path": "./tsconfig.spec.json" }]
 }
