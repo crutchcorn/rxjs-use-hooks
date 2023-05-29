@@ -18,5 +18,6 @@
     "jsx": "preserve"
   },
   "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "exclude": ["*.spec.tsx", "*.spec.ts"],
+  "references": [{ "path": "./tsconfig.node.json" }, { "path": "./tsconfig.spec.json" }]
 }

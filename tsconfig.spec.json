@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["src/**/*.spec.tsx", "src/**/*.spec.ts"],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "paths": {
+      "rxjs-use-hooks": ["./src"]
+    }
+  }
+}

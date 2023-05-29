@@ -14,7 +14,7 @@ export interface UseObservableOptions<I> {
 export function useObservable<H, I = undefined>(
   observable: Observable<H>,
   options?: UseObservableOptions<I | undefined>
-): UseStateArr<H | I | undefined> {
+): H | I | undefined {
   const [val, setVal] = useState<H | I | undefined>(options?.initialValue);
   useEffectOnce(() => {
     const subscription = observable.subscribe({
@@ -25,5 +25,5 @@ export function useObservable<H, I = undefined>(
       subscription.unsubscribe();
     };
   });
-  return [val, setVal];
+  return val;
 }
