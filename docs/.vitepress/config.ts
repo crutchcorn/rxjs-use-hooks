@@ -8,6 +8,7 @@ export default defineConfig({
   lang: "en-US",
   title: "RxJS Use Hooks",
   description: description,
+  base: "/rxjs-use-hooks/",
   lastUpdated: true,
   head: [
     ["meta", {property: "og:image", content: ogImage}],
