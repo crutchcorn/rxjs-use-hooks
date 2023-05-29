@@ -51,6 +51,10 @@ export default defineConfig({
         text: "useObservable",
         link: "/useObservable",
       },
+      {
+        text: "useSubject",
+        link: "/useSubject",
+      },
     ],
   },
 });
