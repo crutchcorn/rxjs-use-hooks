@@ -55,6 +55,10 @@ export default defineConfig({
         text: "useSubject",
         link: "/useSubject",
       },
+      {
+        text: "useSubscription",
+        link: "/useSubscription",
+      },
     ],
   },
 });
