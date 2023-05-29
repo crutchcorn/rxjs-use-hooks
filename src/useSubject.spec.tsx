@@ -1,8 +1,11 @@
 import { describe, test, expect } from "vitest";
-import { useObservable } from "rxjs-use-hooks";
-import { BehaviorSubject, Subject } from "rxjs";
+import { BehaviorSubject } from "rxjs";
 import { render } from "@testing-library/react";
 import { useSubject } from "./useSubject";
+
+import userEvent from "@testing-library/user-event";
+
+const user = userEvent.setup();
 
 describe("useSubject", () => {
   test("should get value immediately from BehaviorSubject", async () => {
