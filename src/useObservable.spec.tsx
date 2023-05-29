@@ -14,16 +14,51 @@ describe("useObservable", () => {
         return <p>{state ?? "nothing"}</p>;
       };
 
-      const { getByText } = render(<Comp />);
-      expect(getByText("nothing")).toBeInTheDocument();
+      const { findByText } = render(<Comp />);
+      expect(await findByText("nothing")).toBeInTheDocument();
     });
 
-    test("should set the state from the data emitted on the stream", async () => {});
+    test("should set the state from the data emitted on the stream", async () => {
+      const subj = new Subject<string>();
+
+      const Comp = () => {
+        const state = useObservable(subj);
+
+        return <p>{state ?? "nothing"}</p>;
+      };
+
+      const { findByText } = render(<Comp />);
+      subj.next("Test");
+      expect(await findByText("Test")).toBeInTheDocument();
+    });
   });
 
   describe("when initialValue is provided", () => {
-    test("should set the ref's value to initialData before the stream has emitted", () => {});
+    test("should set the ref's value to initialData before the stream has emitted", async () => {
+      const subj = new Subject<string>();
 
-    test("should set the ref's value from the data emitted on the stream", async () => {});
+      const Comp = () => {
+        const state = useObservable(subj, { initialValue: "INITIAL_DATA" });
+
+        return <p>{state ?? "nothing"}</p>;
+      };
+
+      const { findByText } = render(<Comp />);
+      expect(await findByText("INITIAL_DATA")).toBeInTheDocument();
+    });
+
+    test("should set the ref's value from the data emitted on the stream", async () => {
+      const subj = new Subject<string>();
+
+      const Comp = () => {
+        const state = useObservable(subj, { initialValue: "INITIAL_DATA" });
+
+        return <p>{state ?? "nothing"}</p>;
+      };
+
+      const { findByText } = render(<Comp />);
+      subj.next("Test");
+      expect(await findByText("Test")).toBeInTheDocument();
+    });
   });
 });
