@@ -2,7 +2,7 @@ import {defineConfig} from "vitepress";
 
 const {description} = require("../../package.json");
 
-const ogImage = "/social-banner.png";
+const ogImage = "https://crutchcorn.github.io/rxjs-use-hooks/social-banner.png";
 
 export default defineConfig({
   lang: "en-US",
@@ -29,7 +29,7 @@ export default defineConfig({
     nav: [
       {text: "Introduction", link: "/introduction"},
       {
-        text: "v0",
+        text: "v1",
         items: [
           // Change to `Changelog` when we have one
           {
