@@ -1,6 +1,6 @@
-import { defineConfig } from "vitepress";
+import {defineConfig} from "vitepress";
 
-const { description } = require("../../package.json");
+const {description} = require("../../package.json");
 
 const ogImage = "/social-banner.png";
 
@@ -10,23 +10,23 @@ export default defineConfig({
   description: description,
   lastUpdated: true,
   head: [
-    ["meta", { property: "og:image", content: ogImage }],
-    ["meta", { name: "twitter:image", content: ogImage }],
-    ["meta", { name: "theme-color", content: "#DBCAFF" }],
-    ["meta", { property: "twitter:card", content: "summary_large_image" }],
-    ["link", { rel: "icon", href: "/logo.svg", type: "image/svg+xml" }],
-    ["link", { rel: "mask-icon", href: "/logo.svg", color: "#ffffff" }],
+    ["meta", {property: "og:image", content: ogImage}],
+    ["meta", {name: "twitter:image", content: ogImage}],
+    ["meta", {name: "theme-color", content: "#DBCAFF"}],
+    ["meta", {property: "twitter:card", content: "summary_large_image"}],
+    ["link", {rel: "icon", href: "/logo.svg", type: "image/svg+xml"}],
+    ["link", {rel: "mask-icon", href: "/logo.svg", color: "#ffffff"}],
   ],
   themeConfig: {
     logo: "/logo.svg",
     socialLinks: [
-      { icon: "github", link: "https://github.com/crutchcorn/rxjs-use-hooks" }
+      {icon: "github", link: "https://github.com/crutchcorn/rxjs-use-hooks"}
     ],
     editLink: {
       pattern: "https://github.com/crutchcorn/rxjs-use-hooks/edit/main/docs/:path",
     },
     nav: [
-      { text: "Introduction", link: "/introduction" },
+      {text: "Introduction", link: "/introduction"},
       {
         text: "v0",
         items: [
@@ -44,13 +44,12 @@ export default defineConfig({
     ],
     sidebar: [
       {
-        text: "Getting Started",
-        items: [
-          {
-            text: "Introduction",
-            link: "/introduction",
-          },
-        ],
+        text: "Introduction",
+        link: "/introduction",
+      },
+      {
+        text: "useObservable",
+        link: "/useObservable",
       },
     ],
   },
