@@ -1,15 +1,9 @@
-import { useRef } from "react";
-import { Unsubscribable } from "rxjs";
+import { Subscription } from "rxjs";
 import { useEffectOnce } from "./useEffectOnce";
 
-export const useSubscription = (observable: Unsubscribable) => {
-  const isMounted = useRef(false);
-
+export const useSubscription = (observable: () => Subscription) => {
   useEffectOnce(() => {
-    if (!isMounted.current) {
-      isMounted.current = true;
-      return;
-    }
-    return () => observable.unsubscribe();
+    const subscribe = observable();
+    return () => subscribe.unsubscribe();
   });
 };
