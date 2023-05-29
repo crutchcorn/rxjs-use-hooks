@@ -10,7 +10,7 @@
     "url": "https://github.com/crutchcorn/rxjs-use-hooks/issues"
   },
   "homepage": "https://github.com/crutchcorn/rxjs-use-hooks#readme",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "vite build --watch",
     "build": "tsc && vite build",
@@ -51,8 +51,8 @@
     "rxjs": ">=6.0.0"
   },
   "types": "./dist/index.d.ts",
-  "main": "./dist/rxjs-use-hooks.cjs",
   "module": "./dist/rxjs-use-hooks.mjs",
+  "main": "./dist/rxjs-use-hooks.cjs",
   "files": [
     "dist",
     "src"
@@ -60,8 +60,9 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
+      "import": "./dist/rxjs-use-hooks.mjs",
       "require": "./dist/rxjs-use-hooks.cjs",
-      "import": "./dist/rxjs-use-hooks.mjs"
+      "default": "./dist/rxjs-use-hooks.cjs"
     }
   },
   "engines": {
